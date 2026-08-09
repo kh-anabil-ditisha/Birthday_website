@@ -1,297 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
 <title>Happy Birthday My Love ❤️</title>
 
 <style>
 
 /* =====================================================
-   RESET
+   GLOBAL
 ===================================================== */
 
 *{
+    box-sizing:border-box;
     margin:0;
     padding:0;
-    box-sizing:border-box;
 }
 
-html,
-body{
-    width:100%;
-    height:100%;
-    overflow:hidden;
+html{
+    scroll-behavior:smooth;
 }
 
 body{
 
     font-family:
-        "Trebuchet MS",
-        "Segoe UI",
-        sans-serif;
+    "Segoe UI",
+    Arial,
+    sans-serif;
 
-    color:#4a1738;
-
-    /* PINKISH BACKGROUND */
+    min-height:100vh;
 
     background:
-        radial-gradient(
-            circle at 10% 10%,
-            #ffb6d9 0%,
-            transparent 35%
-        ),
+    radial-gradient(
+        circle at 20% 20%,
+        #ffd6e7,
+        transparent 35%
+    ),
+    radial-gradient(
+        circle at 80% 10%,
+        #ffc1dc,
+        transparent 30%
+    ),
+    linear-gradient(
+        135deg,
+        #ffb6d5,
+        #ffd1e3,
+        #f9b5d0,
+        #ffc9dd
+    );
 
-        radial-gradient(
-            circle at 90% 20%,
-            #d9b8ff 0%,
-            transparent 35%
-        ),
+    color:#54213b;
 
-        radial-gradient(
-            circle at 20% 90%,
-            #ff8fc5 0%,
-            transparent 35%
-        ),
-
-        radial-gradient(
-            circle at 90% 90%,
-            #ffc4df 0%,
-            transparent 35%
-        ),
-
-        linear-gradient(
-            135deg,
-            #ffd6e9,
-            #f7c4e1,
-            #e9c8ff,
-            #ffc9df
-        );
-
-    background-size:
-        150% 150%,
-        150% 150%,
-        150% 150%,
-        150% 150%,
-        400% 400%;
-
-    animation:
-        pinkBackground 15s ease infinite;
-}
-
-@keyframes pinkBackground{
-
-    0%{
-        background-position:
-            0% 0%,
-            100% 0%,
-            0% 100%,
-            100% 100%,
-            0% 50%;
-    }
-
-    50%{
-        background-position:
-            100% 50%,
-            0% 100%,
-            100% 0%,
-            0% 50%,
-            100% 50%;
-    }
-
-    100%{
-        background-position:
-            0% 0%,
-            100% 0%,
-            0% 100%,
-            100% 100%,
-            0% 50%;
-    }
+    overflow-x:hidden;
 }
 
 
 /* =====================================================
-   BACKGROUND BLOBS
+   FLOATING BACKGROUND
 ===================================================== */
 
-.bg-blob{
+.bg-heart{
 
     position:fixed;
 
-    border-radius:50%;
+    font-size:25px;
 
     pointer-events:none;
 
-    filter:blur(5px);
+    animation:
+        floatUp 7s linear infinite;
 
-    opacity:.38;
+    opacity:.65;
 
     z-index:0;
 }
 
-.blob1{
+@keyframes floatUp{
 
-    width:350px;
-    height:350px;
-
-    background:#ff4f9a;
-
-    top:-130px;
-    left:-100px;
-
-    animation:
-        blob1 8s ease-in-out infinite;
-}
-
-.blob2{
-
-    width:400px;
-    height:400px;
-
-    background:#c77dff;
-
-    top:15%;
-    right:-150px;
-
-    animation:
-        blob2 11s ease-in-out infinite;
-}
-
-.blob3{
-
-    width:320px;
-    height:320px;
-
-    background:#ff75b8;
-
-    bottom:-120px;
-    left:15%;
-
-    animation:
-        blob3 9s ease-in-out infinite;
-}
-
-.blob4{
-
-    width:250px;
-    height:250px;
-
-    background:#ffb3d6;
-
-    bottom:5%;
-    right:8%;
-
-    animation:
-        blob4 7s ease-in-out infinite;
-}
-
-@keyframes blob1{
-
-    50%{
+    0%{
         transform:
-            translate(100px,80px)
-            scale(1.2);
-    }
-}
-
-@keyframes blob2{
-
-    50%{
-        transform:
-            translate(-100px,80px)
-            scale(.8);
-    }
-}
-
-@keyframes blob3{
-
-    50%{
-        transform:
-            translate(100px,-80px)
-            scale(1.25);
-    }
-}
-
-@keyframes blob4{
-
-    50%{
-        transform:
-            translate(-80px,-60px)
-            scale(1.2);
-    }
-}
-
-
-/* =====================================================
-   FLOATING DECORATIONS
-===================================================== */
-
-.floating{
-
-    position:fixed;
-
-    z-index:2;
-
-    pointer-events:none;
-
-    animation:
-        floatAround 5s ease-in-out infinite;
-}
-
-.f1{
-    top:7%;
-    left:7%;
-    font-size:34px;
-}
-
-.f2{
-    top:12%;
-    right:8%;
-    font-size:30px;
-    animation-delay:1s;
-}
-
-.f3{
-    bottom:12%;
-    left:7%;
-    font-size:35px;
-    animation-delay:2s;
-}
-
-.f4{
-    bottom:8%;
-    right:9%;
-    font-size:38px;
-    animation-delay:3s;
-}
-
-.f5{
-    top:45%;
-    left:3%;
-    font-size:25px;
-    animation-delay:1.5s;
-}
-
-.f6{
-    top:40%;
-    right:4%;
-    font-size:28px;
-    animation-delay:2.5s;
-}
-
-@keyframes floatAround{
-
-    0%,100%{
-        transform:
-            translateY(0)
-            rotate(0deg);
+        translateY(110vh)
+        rotate(0deg);
+        opacity:0;
     }
 
-    50%{
+    15%{
+        opacity:.7;
+    }
+
+    100%{
         transform:
-            translateY(-22px)
-            rotate(12deg);
+        translateY(-120px)
+        rotate(360deg);
+        opacity:0;
     }
 }
 
@@ -302,42 +108,47 @@ body{
 
 .screen{
 
-    position:fixed;
+    min-height:100vh;
 
-    inset:0;
-
-    width:100vw;
-    height:100vh;
+    padding:
+    35px
+    20px
+    70px;
 
     display:none;
 
-    align-items:center;
+    position:relative;
+
+    z-index:1;
+
+    align-items:flex-start;
+
     justify-content:center;
-
-    padding:20px;
-
-    opacity:0;
-
-    transform:
-        scale(.92)
-        translateY(20px);
-
-    transition:
-        opacity .5s ease,
-        transform .5s ease;
-
-    z-index:10;
 }
 
 .screen.active{
 
     display:flex;
 
-    opacity:1;
+    animation:
+    screenIn .7s ease;
+}
 
-    transform:
-        scale(1)
-        translateY(0);
+@keyframes screenIn{
+
+    from{
+        opacity:0;
+        transform:
+        translateY(25px)
+        scale(.98);
+    }
+
+    to{
+        opacity:1;
+        transform:
+        translateY(0)
+        scale(1);
+    }
 }
 
 
@@ -351,23 +162,14 @@ body{
 
     max-width:900px;
 
-    max-height:94vh;
-
-    overflow-y:auto;
-
-    scrollbar-width:none;
+    margin:auto;
 
     text-align:center;
 
-    position:relative;
-
-    z-index:20;
-
-    padding:15px;
-}
-
-.content::-webkit-scrollbar{
-    display:none;
+    padding:
+    20px
+    10px
+    50px;
 }
 
 
@@ -378,149 +180,290 @@ body{
 .card{
 
     background:
-        rgba(255,255,255,.90);
+    rgba(255,255,255,.82);
 
     backdrop-filter:
-        blur(18px);
+    blur(15px);
 
     -webkit-backdrop-filter:
-        blur(18px);
+    blur(15px);
 
     border:
-        4px solid rgba(255,255,255,.85);
+    3px solid
+    rgba(255,255,255,.8);
 
-    border-radius:35px;
+    border-radius:32px;
 
-    padding:40px;
+    padding:
+    42px 35px;
 
     box-shadow:
-        0 25px 80px
-        rgba(160,40,100,.20);
+    0 20px 50px
+    rgba(135,30,75,.18);
 
-    animation:
-        cardEnter .7s ease;
+    position:relative;
+
+    overflow:hidden;
 }
 
-@keyframes cardEnter{
+.card::before{
 
-    from{
-        opacity:0;
-        transform:
-            scale(.75)
-            rotate(-3deg);
-    }
+    content:"";
 
-    to{
-        opacity:1;
-        transform:
-            scale(1)
-            rotate(0);
-    }
+    position:absolute;
+
+    width:160px;
+    height:160px;
+
+    background:#ffb5d1;
+
+    border-radius:50%;
+
+    top:-90px;
+    right:-60px;
+
+    opacity:.35;
+}
+
+.card::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:130px;
+    height:130px;
+
+    background:#ffd2e4;
+
+    border-radius:50%;
+
+    bottom:-80px;
+    left:-50px;
+
+    opacity:.45;
 }
 
 
 /* =====================================================
-   BADGE
+   TYPOGRAPHY
+===================================================== */
+
+h1{
+
+    font-size:
+    clamp(30px,5vw,52px);
+
+    color:#b52b65;
+
+    margin-bottom:18px;
+
+    font-weight:900;
+}
+
+h2{
+
+    color:#9d285a;
+
+    margin-bottom:15px;
+}
+
+p{
+
+    font-size:18px;
+
+    line-height:1.7;
+
+    margin-bottom:20px;
+}
+
+
+/* =====================================================
+   FIRST SCREEN
 ===================================================== */
 
 .badge{
 
     display:inline-block;
 
-    background:#fff;
+    background:#ff4f91;
 
-    color:#d92876;
+    color:white;
 
     padding:
-        11px 22px;
+    10px 20px;
 
     border-radius:50px;
 
     font-weight:900;
 
     box-shadow:
-        0 10px 30px
-        rgba(190,40,110,.15);
-
-    margin-bottom:25px;
+    0 8px 20px
+    rgba(255,79,145,.3);
 
     animation:
-        badgeBounce 1s ease infinite alternate;
+    pulse 1.8s infinite;
 }
 
-@keyframes badgeBounce{
+@keyframes pulse{
 
-    to{
-        transform:
-            translateY(-5px)
-            rotate(2deg);
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.06);
     }
 }
-
-
-/* =====================================================
-   MAIN TITLE
-===================================================== */
 
 .title{
 
     font-size:
-        clamp(48px,10vw,95px);
+    clamp(45px,8vw,85px);
 
-    line-height:1;
-
-    font-weight:1000;
-
-    margin-bottom:25px;
-
-    background:
-        linear-gradient(
-            90deg,
-            #ff187f,
-            #ff4f9f,
-            #b14cff,
-            #ff187f
-        );
-
-    background-size:300%;
-
-    -webkit-background-clip:text;
-
-    color:transparent;
+    margin-top:35px;
 
     animation:
-        titleGradient 4s linear infinite,
-        titleFloat 2s ease-in-out infinite;
+    titleBounce 1.2s ease;
 }
 
-@keyframes titleGradient{
+@keyframes titleBounce{
 
-    to{
-        background-position:300%;
-    }
-}
-
-@keyframes titleFloat{
-
-    50%{
+    0%{
         transform:
-            translateY(-7px);
+        scale(.4)
+        rotate(-10deg);
+        opacity:0;
     }
+
+    70%{
+        transform:
+        scale(1.1)
+        rotate(3deg);
+    }
+
+    100%{
+        transform:
+        scale(1)
+        rotate(0);
+        opacity:1;
+    }
+}
+
+.subtitle{
+
+    font-size:20px;
+
+    max-width:650px;
+
+    margin:
+    0 auto 30px;
 }
 
 
 /* =====================================================
-   SUBTITLE
+   COUNTDOWN
 ===================================================== */
 
-.subtitle{
+.countdown-title{
 
     font-size:
-        clamp(17px,3vw,23px);
+    clamp(30px,6vw,55px);
 
-    line-height:1.7;
+    margin-top:20px;
+}
 
-    margin-bottom:30px;
+.countdown{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(4,1fr);
+
+    gap:15px;
+
+    max-width:650px;
+
+    margin:
+    30px auto;
+
+}
+
+.time-box{
+
+    background:
+    linear-gradient(
+        145deg,
+        #ff5f9b,
+        #ff91ba
+    );
+
+    color:white;
+
+    padding:
+    20px 10px;
+
+    border-radius:22px;
+
+    box-shadow:
+    0 12px 25px
+    rgba(190,30,90,.2);
+
+    animation:
+    floatBox 3s ease-in-out infinite;
+}
+
+.time-box:nth-child(2){
+    animation-delay:.2s;
+}
+
+.time-box:nth-child(3){
+    animation-delay:.4s;
+}
+
+.time-box:nth-child(4){
+    animation-delay:.6s;
+}
+
+@keyframes floatBox{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-8px);
+    }
+}
+
+.time-number{
+
+    display:block;
+
+    font-size:
+    clamp(30px,6vw,50px);
+
+    font-weight:900;
+}
+
+.time-label{
+
+    font-size:13px;
+
+    font-weight:800;
+
+    letter-spacing:1px;
+}
+
+.birthday-now{
+
+    font-size:28px;
+
+    font-weight:900;
+
+    color:#ff3d86;
+
+    animation:pulse 1s infinite;
 }
 
 
@@ -530,72 +473,59 @@ body{
 
 .main-btn{
 
-    display:inline-flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    width:auto;
-
-    min-width:200px;
-
-    max-width:100%;
-
-    padding:
-        16px 28px;
-
     border:none;
 
-    border-radius:60px;
-
     background:
-        linear-gradient(
-            135deg,
-            #ff3d91,
-            #d43cff
-        );
+    linear-gradient(
+        135deg,
+        #ff3f88,
+        #ff70a8
+    );
 
     color:white;
 
-    font-size:16px;
+    font-size:17px;
 
     font-weight:900;
+
+    padding:
+    15px 28px;
+
+    border-radius:50px;
 
     cursor:pointer;
 
     box-shadow:
-        0 12px 30px
-        rgba(210,40,130,.30);
-
-    border:
-        4px solid white;
+    0 10px 22px
+    rgba(210,35,105,.25);
 
     transition:
-        transform .25s ease,
-        box-shadow .25s ease;
+    transform .2s,
+    box-shadow .2s;
 
     margin:
-        10px 5px;
+    12px auto;
 
-    white-space:normal;
+    display:block;
+
+    min-height:52px;
 }
 
 .main-btn:hover{
 
     transform:
-        translateY(-5px)
-        scale(1.04);
+    translateY(-4px)
+    scale(1.03);
 
     box-shadow:
-        0 18px 40px
-        rgba(230,40,140,.40);
+    0 15px 30px
+    rgba(210,35,105,.3);
 }
 
 .main-btn:active{
 
     transform:
-        scale(.95);
+    scale(.96);
 }
 
 
@@ -605,60 +535,54 @@ body{
 
 .options{
 
-    display:flex;
+    display:grid;
 
-    flex-direction:column;
+    grid-template-columns:
+    repeat(2,1fr);
 
-    gap:14px;
+    gap:15px;
 
     margin-top:25px;
-
-    width:100%;
 }
 
 .option{
 
-    width:100%;
-
-    min-height:55px;
-
-    padding:
-        14px 18px;
-
-    border-radius:20px;
-
     border:
-        3px solid #f2c6dd;
+    2px solid #ffafd0;
 
-    background:
-        linear-gradient(
-            135deg,
-            #ffffff,
-            #fff0f8
-        );
+    background:#fff4f9;
 
-    color:#4a1738;
+    padding:16px;
 
-    font-size:16px;
-
-    font-weight:800;
+    border-radius:18px;
 
     cursor:pointer;
 
-    transition:.25s;
+    font-weight:800;
 
-    overflow-wrap:anywhere;
+    transition:.25s;
 }
 
 .option:hover{
 
+    background:#ffd7e7;
+
     transform:
-        translateX(7px)
-        scale(1.02);
+    translateY(-3px);
+}
 
-    background:#ffe0ef;
+.correct{
 
-    border-color:#ff65a8;
+    background:#b9f5cf !important;
+
+    border-color:#55c87a !important;
+}
+
+.wrong{
+
+    background:#ffc4d4 !important;
+
+    border-color:#ff638d !important;
 }
 
 
@@ -668,41 +592,40 @@ body{
 
 .progress{
 
-    width:100%;
+    height:15px;
 
-    height:13px;
-
-    background:#f1dce8;
+    background:#ffd7e6;
 
     border-radius:30px;
 
-    margin:
-        25px 0;
-
     overflow:hidden;
+
+    margin:
+    25px 0;
 }
 
 .progress-bar{
 
-    width:0%;
-
     height:100%;
 
+    width:0;
+
     background:
-        linear-gradient(
-            90deg,
-            #ff3d91,
-            #d43cff,
-            #ff75b8
-        );
+    linear-gradient(
+        90deg,
+        #ff3f88,
+        #ff8eba
+    );
+
+    border-radius:30px;
 
     transition:
-        width .5s ease;
+    width .5s ease;
 }
 
 
 /* =====================================================
-   ROAST GRID
+   ROAST
 ===================================================== */
 
 .roast-grid{
@@ -710,47 +633,37 @@ body{
     display:grid;
 
     grid-template-columns:
-        repeat(2,1fr);
+    repeat(2,1fr);
 
     gap:18px;
 
     margin:
-        30px 0;
+    30px 0;
 }
 
 .roast{
 
-    background:#fff;
+    background:#fff4f9;
 
-    padding:22px;
+    border-radius:22px;
 
-    border-radius:25px;
+    padding:20px;
 
-    box-shadow:
-        0 10px 30px
-        rgba(170,40,100,.08);
-
-    transition:.3s;
-}
-
-.roast:hover{
-
-    transform:
-        translateY(-8px)
-        rotate(2deg);
+    font-weight:900;
 }
 
 .bar{
 
-    height:13px;
+    width:100%;
 
-    background:#f3dfe9;
+    height:15px;
+
+    background:#ffdce9;
 
     border-radius:20px;
 
-    margin-top:12px;
-
-    overflow:hidden;
+    margin:
+    12px 0;
 }
 
 .bar-fill{
@@ -760,20 +673,21 @@ body{
     width:0;
 
     background:
-        linear-gradient(
-            90deg,
-            #ff3d91,
-            #d43cff,
-            #ff75b8
-        );
+    linear-gradient(
+        90deg,
+        #ff4f91,
+        #ff9cc2
+    );
+
+    border-radius:20px;
 
     transition:
-        width 1.4s ease;
+    width 1.3s ease;
 }
 
 
 /* =====================================================
-   LOVE GRID
+   LOVE CARDS
 ===================================================== */
 
 .love-grid{
@@ -781,60 +695,51 @@ body{
     display:grid;
 
     grid-template-columns:
-        repeat(2,1fr);
+    repeat(2,1fr);
 
     gap:18px;
 
     margin:
-        30px 0;
+    30px 0;
 }
 
 .love-card{
 
-    padding:27px;
-
-    min-height:150px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    border-radius:28px;
-
     background:
-        linear-gradient(
-            135deg,
-            #fff,
-            #fff0f7
-        );
+    linear-gradient(
+        135deg,
+        #fff0f6,
+        #ffe0ec
+    );
 
-    border:
-        3px solid #ffd0e4;
+    padding:24px;
+
+    border-radius:22px;
+
+    font-size:18px;
 
     font-weight:800;
 
-    font-size:17px;
+    border:
+    2px solid #ffc0d8;
 
-    box-shadow:
-        0 10px 30px
-        rgba(180,40,100,.07);
-
-    transition:.35s;
+    transition:.3s;
 }
 
 .love-card:hover{
 
     transform:
-        translateY(-10px)
-        rotate(2deg)
-        scale(1.03);
+    rotate(-2deg)
+    translateY(-5px);
+
+    box-shadow:
+    0 12px 25px
+    rgba(170,30,90,.15);
 }
 
 
 /* =====================================================
-   GIFT
+   GIFTS
 ===================================================== */
 
 .gift-grid{
@@ -843,35 +748,20 @@ body{
 
     justify-content:center;
 
-    align-items:center;
-
     flex-wrap:wrap;
 
     gap:25px;
 
     margin:
-        35px 0;
+    35px 0;
 }
 
 .gift{
 
-    width:145px;
+    width:125px;
+    height:125px;
 
-    height:145px;
-
-    flex:0 0 145px;
-
-    border-radius:30px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #ff3d91,
-            #d43cff
-        );
-
-    border:
-        5px solid white;
+    flex:0 0 125px;
 
     display:flex;
 
@@ -879,55 +769,41 @@ body{
 
     justify-content:center;
 
-    font-size:65px;
+    font-size:55px;
+
+    background:
+    linear-gradient(
+        145deg,
+        #ffb0cf,
+        #ff74aa
+    );
+
+    border-radius:25px;
 
     cursor:pointer;
 
     box-shadow:
-        0 18px 40px
-        rgba(170,30,130,.25);
+    0 12px 25px
+    rgba(170,30,90,.2);
 
     transition:.3s;
-
-    animation:
-        giftFloat 2s ease-in-out infinite;
 }
 
-.gift:nth-child(2){
-    animation-delay:.3s;
+.gift:hover{
+
+    transform:
+    translateY(-10px)
+    rotate(5deg)
+    scale(1.05);
 }
 
-.gift:nth-child(3){
-    animation-delay:.6s;
-}
+.gift.opened{
 
-@keyframes giftFloat{
+    transform:
+    rotateY(180deg)
+    scale(.9);
 
-    50%{
-        transform:
-            translateY(-10px)
-            rotate(3deg);
-    }
-}
-
-.gift.open{
-
-    animation:
-        giftOpen .8s ease forwards;
-}
-
-@keyframes giftOpen{
-
-    50%{
-        transform:
-            scale(1.3)
-            rotate(-8deg);
-    }
-
-    100%{
-        transform:
-            scale(1.05);
-    }
+    opacity:.65;
 }
 
 
@@ -940,58 +816,64 @@ body{
     display:grid;
 
     grid-template-columns:
-        repeat(3,1fr);
+    repeat(3,1fr);
 
-    gap:20px;
+    gap:25px;
 
     margin:
-        30px 0;
+    35px 0;
 }
 
 .memory{
 
     background:white;
 
-    padding:
-        10px 10px 18px;
+    padding:12px;
 
-    border-radius:12px;
+    border-radius:8px;
 
     box-shadow:
-        0 12px 35px
-        rgba(130,30,80,.15);
-
-    transition:.4s;
+    0 12px 25px
+    rgba(80,20,50,.18);
 
     transform:
-        rotate(var(--rotation));
+    rotate(var(--rotation));
+
+    transition:.3s;
 }
 
 .memory:hover{
 
     transform:
-        rotate(0)
-        scale(1.07);
-
-    z-index:50;
+    rotate(0deg)
+    scale(1.04);
 }
 
 .memory img{
 
     width:100%;
 
-    height:190px;
+    height:230px;
 
     object-fit:cover;
 
-    border-radius:8px;
+    border-radius:5px;
+
+    display:block;
 }
 
 .memory p{
 
-    font-weight:800;
+    font-family:
+    "Comic Sans MS",
+    cursive;
 
-    margin-top:12px;
+    font-size:15px;
+
+    margin:
+    12px 4px 5px;
+
+    line-height:1.4;
 }
 
 
@@ -1001,131 +883,130 @@ body{
 
 .cake{
 
+    width:260px;
+
+    height:230px;
+
     position:relative;
 
-    width:280px;
-
-    height:250px;
-
     margin:
-        30px auto;
+    30px auto;
+
 }
 
 .cake-body{
 
     position:absolute;
 
-    bottom:0;
+    width:220px;
 
-    width:280px;
-
-    height:145px;
+    height:110px;
 
     background:
-        linear-gradient(
-            #ff9bc5,
-            #ff3e8d
-        );
+    linear-gradient(
+        #ff80ae,
+        #ff4f91
+    );
+
+    left:20px;
+
+    bottom:20px;
 
     border-radius:
-        25px 25px 35px 35px;
-
-    box-shadow:
-        0 20px 45px
-        rgba(255,40,130,.25);
+    10px 10px 20px 20px;
 }
 
 .cake-top{
 
     position:absolute;
 
-    top:62px;
+    width:220px;
 
-    width:280px;
+    height:55px;
 
-    height:60px;
+    background:#ffd1e2;
 
-    background:#fff;
+    left:20px;
+
+    bottom:110px;
 
     border-radius:50%;
-
-    z-index:2;
 }
 
 .candle{
 
     position:absolute;
 
-    top:5px;
-
     width:20px;
 
     height:70px;
 
     background:
-        repeating-linear-gradient(
-            45deg,
-            white 0 8px,
-            #d43cff 8px 16px
-        );
+    repeating-linear-gradient(
+        45deg,
+        #fff,
+        #fff 8px,
+        #ff5f9d 8px,
+        #ff5f9d 16px
+    );
 
-    border-radius:6px;
+    bottom:150px;
 
-    z-index:5;
+    border-radius:5px;
+
+    z-index:3;
 }
 
-.candle:nth-child(1){
-    left:70px;
+#candle1{
+    left:65px;
 }
 
-.candle:nth-child(2){
-    left:130px;
+#candle2{
+    left:120px;
 }
 
-.candle:nth-child(3){
-    left:190px;
+#candle3{
+    left:175px;
 }
 
 .flame{
 
     position:absolute;
 
-    width:24px;
+    width:18px;
 
-    height:32px;
+    height:25px;
 
-    top:-28px;
-
-    left:-2px;
+    background:#ffb000;
 
     border-radius:
-        50% 50% 50% 0;
+    50% 50% 50% 50%;
 
-    transform:
-        rotate(-45deg);
+    top:-25px;
 
-    background:
-        radial-gradient(
-            circle at 50% 70%,
-            white 0 12%,
-            #ffd43b 30%,
-            #ff7200 75%
-        );
+    left:1px;
 
     animation:
-        flameMove .5s infinite alternate;
+    flame 0.6s infinite alternate;
 }
 
-@keyframes flameMove{
+@keyframes flame{
+
+    from{
+        transform:
+        scale(.85)
+        rotate(-4deg);
+    }
 
     to{
         transform:
-            rotate(-40deg)
-            scale(1.15);
+        scale(1.1)
+        rotate(4deg);
     }
 }
 
-.candle.off .flame{
+.flame.off{
+
     display:none;
 }
 
@@ -1136,59 +1017,55 @@ body{
 
 .letter{
 
+    background:
+    linear-gradient(
+        135deg,
+        #fff4f8,
+        #ffe3ee
+    );
+
+    border:
+    2px dashed #ff8eb8;
+
+    padding:30px;
+
+    border-radius:25px;
+
     text-align:left;
 
-    padding:35px;
+    min-height:180px;
 
-    background:
-        rgba(255,255,255,.96);
-
-    border-radius:30px;
-
-    min-height:260px;
-
-    line-height:1.9;
+    font-family:
+    Georgia,
+    serif;
 
     font-size:18px;
 
-    box-shadow:
-        0 15px 45px
-        rgba(170,40,100,.10);
+    line-height:1.9;
 }
 
+.final-love{
 
-/* =====================================================
-   FINAL PHOTO
-===================================================== */
+    font-size:
+    clamp(25px,5vw,42px);
+
+    font-weight:900;
+
+    color:#ff3f88;
+}
 
 .final-photo{
-
     width:100%;
-
-    max-width:430px;
-
-    border-radius:30px;
-
-    border:
-        6px solid white;
-
+    max-width:500px;
+    height:auto;
+    object-fit:contain;
+    display:block;
+    margin:0 auto;
+    border-radius:25px;
     box-shadow:
-        0 20px 60px
-        rgba(140,30,90,.20);
-
-    animation:
-        photoFloat 3s ease-in-out infinite;
+    0 15px 40px
+    rgba(50,20,40,.2);
 }
-
-@keyframes photoFloat{
-
-    50%{
-        transform:
-            translateY(-8px)
-            rotate(1deg);
-    }
-}
-
 
 /* =====================================================
    CONFETTI
@@ -1198,170 +1075,27 @@ body{
 
     position:fixed;
 
-    top:-40px;
+    width:12px;
+    height:12px;
 
-    z-index:99999;
-
-    pointer-events:none;
-
-    animation:
-        fall linear forwards;
-}
-
-@keyframes fall{
-
-    to{
-
-        transform:
-            translateY(115vh)
-            rotate(900deg);
-
-        opacity:0;
-    }
-}
-
-
-/* =====================================================
-   HEARTS
-===================================================== */
-
-.heart{
-
-    position:fixed;
-
-    bottom:-40px;
-
-    z-index:9998;
-
-    pointer-events:none;
-
-    animation:
-        heartRise linear forwards;
-}
-
-@keyframes heartRise{
-
-    to{
-
-        transform:
-            translateY(-115vh)
-            rotate(25deg);
-
-        opacity:0;
-    }
-}
-
-
-/* =====================================================
-   SPARKLES
-===================================================== */
-
-.sparkle{
-
-    position:fixed;
-
-    pointer-events:none;
+    top:-20px;
 
     z-index:9999;
 
-    font-size:20px;
-
     animation:
-        sparklePop .8s ease forwards;
+    confettiFall
+    4s linear forwards;
 }
 
-@keyframes sparklePop{
-
-    0%{
-        transform:
-            scale(.2)
-            rotate(0);
-        opacity:0;
-    }
-
-    40%{
-        transform:
-            scale(1.4)
-            rotate(90deg);
-        opacity:1;
-    }
-
-    100%{
-        transform:
-            scale(0)
-            rotate(180deg);
-        opacity:0;
-    }
-}
-
-
-/* =====================================================
-   FIREWORKS
-===================================================== */
-
-.firework{
-
-    position:fixed;
-
-    width:9px;
-
-    height:9px;
-
-    border-radius:50%;
-
-    z-index:100000;
-
-    pointer-events:none;
-
-    animation:
-        fireworkExplode 1.2s ease-out forwards;
-}
-
-@keyframes fireworkExplode{
-
-    0%{
-        transform:
-            translate(0,0)
-            scale(1);
-
-        opacity:1;
-    }
-
-    100%{
-        transform:
-            translate(
-                var(--moveX),
-                var(--moveY)
-            )
-            scale(.2);
-
-        opacity:0;
-    }
-}
-
-
-/* =====================================================
-   FINAL LOVE
-===================================================== */
-
-.final-love{
-
-    font-size:
-        clamp(35px,7vw,65px);
-
-    font-weight:1000;
-
-    color:#ff3d91;
-
-    animation:
-        finalPulse 1.5s ease-in-out infinite alternate;
-}
-
-@keyframes finalPulse{
+@keyframes confettiFall{
 
     to{
+
         transform:
-            scale(1.08);
+        translateY(110vh)
+        rotate(720deg);
+
+        opacity:0;
     }
 }
 
@@ -1373,90 +1107,160 @@ body{
 @media(max-width:700px){
 
     .screen{
-        padding:20px 12px 50px 12px;
-        align-items:center;
+
+        padding:
+        18px
+        12px
+        90px;
     }
 
     .content{
-    width:100%;
-    max-width:900px;
-    padding:5px 5px 50px 5px;
+
+        padding:
+        5px
+        5px
+        45px;
     }
 
     .card{
-        padding:24px 18px;
+
+        padding:
+        28px
+        18px
+        38px;
+
         border-radius:28px;
     }
 
-    .roast-grid,
+    .options{
+
+        grid-template-columns:1fr;
+    }
+
+    .roast-grid{
+
+        grid-template-columns:1fr;
+    }
+
     .love-grid{
+
         grid-template-columns:1fr;
     }
 
     .memory-grid{
+
         grid-template-columns:1fr;
     }
 
     .memory img{
-        height:250px;
+
+        height:270px;
+    }
+
+    .countdown{
+
+        grid-template-columns:
+        repeat(2,1fr);
+
+        gap:12px;
+    }
+
+    .time-box{
+
+        padding:15px 8px;
     }
 
     .gift{
-        width:115px;
-        height:115px;
-        flex-basis:115px;
-        font-size:50px;
+
+        width:105px;
+        height:105px;
+
+        flex-basis:105px;
+
+        font-size:45px;
     }
 
     .main-btn{
+
         width:100%;
-        max-width:340px;
-        margin:8px auto 16px auto;
+
+        max-width:350px;
+
+        margin:
+        14px auto;
+
+        white-space:normal;
     }
 
     .letter{
-        padding:24px;
+
+        padding:22px;
+
         font-size:16px;
     }
 
     .cake{
-        transform:scale(.85);
-        margin:10px auto;
+
+        transform:
+        scale(.85);
+
+        margin:
+        10px auto 15px;
     }
+
 }
 
-
-/* =====================================================
-   VERY SMALL SCREEN
-===================================================== */
 
 @media(max-width:380px){
 
     .screen{
-        padding:15px 10px 45px 10px;
-    }
 
-    .content{
-        max-height:84vh;
-        padding-bottom:35px;
+        padding-bottom:100px;
     }
 
     .gift{
-        width:95px;
-        height:95px;
-        flex-basis:95px;
-        font-size:42px;
+
+        width:90px;
+        height:90px;
+
+        flex-basis:90px;
+
+        font-size:40px;
     }
 
     .cake{
-        transform:scale(.72);
+
+        transform:
+        scale(.72);
+
         margin-top:-5px;
-        margin-bottom:-15px;
+
+        margin-bottom:0;
+    }
+
+    .countdown{
+
+        gap:8px;
+    }
+
+    .time-number{
+
+        font-size:30px;
     }
 
 }
 
+
+/* =====================================================
+   HIDE
+===================================================== */
+
+.hidden{
+    display:none !important;
+}
+
 </style>
+
 </head>
 
 
@@ -1464,25 +1268,51 @@ body{
 
 
 <!-- =====================================================
-     BACKGROUND
+     FLOATING HEARTS
 ===================================================== -->
 
-<div class="bg-blob blob1"></div>
-<div class="bg-blob blob2"></div>
-<div class="bg-blob blob3"></div>
-<div class="bg-blob blob4"></div>
+<script>
 
+const hearts = [
+    "❤️",
+    "💕",
+    "💗",
+    "💖",
+    "💘",
+    "🌸",
+    "✨"
+];
 
-<!-- =====================================================
-     FLOATING DECORATIONS
-===================================================== -->
+for(let i=0;i<25;i++){
 
-<div class="floating f1">💗</div>
-<div class="floating f2">✨</div>
-<div class="floating f3">🌸</div>
-<div class="floating f4">💫</div>
-<div class="floating f5">⭐</div>
-<div class="floating f6">💕</div>
+    const heart =
+    document.createElement("div");
+
+    heart.className="bg-heart";
+
+    heart.innerText =
+    hearts[
+        Math.floor(
+            Math.random()*hearts.length
+        )
+    ];
+
+    heart.style.left =
+    Math.random()*100+"%";
+
+    heart.style.animationDelay =
+    Math.random()*7+"s";
+
+    heart.style.animationDuration =
+    (5+Math.random()*5)+"s";
+
+    heart.style.fontSize =
+    (15+Math.random()*25)+"px";
+
+    document.body.appendChild(heart);
+}
+
+</script>
 
 
 <!-- =====================================================
@@ -1490,45 +1320,133 @@ body{
 ===================================================== -->
 
 <section
-    class="screen active"
-    id="screen1">
+class="screen active"
+id="screen1">
 
-    <div class="content">
+<div class="content">
 
-        <div class="badge">
-            🚨 BIRTHDAY ALERT 🚨
-        </div>
+    <div class="badge">
+        🚨 BIRTHDAY ALERT 🚨
+    </div>
 
-        <!-- HEY YOU + LOVE EMOJI -->
+    <h1 class="title">
+        HEY YOU! ❤️
+    </h1>
 
-        <h1 class="title">
-            HEY YOU! ❤️
-        </h1>
+    <p class="subtitle">
 
-        <p class="subtitle">
+        Yes, you.
 
-            Yes, you.
+        <br>
 
-            <br>
+        The birthday boy. 🎂
 
-            The birthday boy. 🎂
+        <br><br>
 
-            <br><br>
+        You have been selected for
+        a very important mission.
 
-            You have been selected for
-            a very important mission.
+    </p>
 
+
+    <!-- COUNTDOWN -->
+
+    <div class="card">
+
+        <h2 class="countdown-title">
+            🎂 Your Birthday Is Coming! 🎂
+        </h2>
+
+        <p>
+            The countdown has officially begun... 👀
         </p>
 
-        <button
-            class="main-btn"
-            onclick="goToScreen(2)">
+        <div
+        class="countdown"
+        id="countdown">
 
-            Start the Birthday Experience 🚀
+            <div class="time-box">
 
-        </button>
+                <span
+                class="time-number"
+                id="days">
+                    0
+                </span>
+
+                <span class="time-label">
+                    DAYS
+                </span>
+
+            </div>
+
+
+            <div class="time-box">
+
+                <span
+                class="time-number"
+                id="hours">
+                    0
+                </span>
+
+                <span class="time-label">
+                    HOURS
+                </span>
+
+            </div>
+
+
+            <div class="time-box">
+
+                <span
+                class="time-number"
+                id="minutes">
+                    0
+                </span>
+
+                <span class="time-label">
+                    MINUTES
+                </span>
+
+            </div>
+
+
+            <div class="time-box">
+
+                <span
+                class="time-number"
+                id="seconds">
+                    0
+                </span>
+
+                <span class="time-label">
+                    SECONDS
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div
+        id="birthdayNow"
+        class="birthday-now hidden">
+
+            🎉 IT'S YOUR BIRTHDAY!!! 🎉
+
+        </div>
 
     </div>
+
+
+    <button
+    class="main-btn"
+    onclick="goToScreen(2)">
+
+        Start the Birthday Experience 🚀
+
+    </button>
+
+</div>
 
 </section>
 
@@ -1538,47 +1456,47 @@ body{
 ===================================================== -->
 
 <section
-    class="screen"
-    id="screen2">
+class="screen"
+id="screen2">
 
-    <div class="content">
+<div class="content">
 
-        <div class="card">
+<div class="card">
 
-            <div style="font-size:65px;">
-                🔐
-            </div>
-
-            <h1>
-                Birthday Verification
-            </h1>
-
-            <p style="margin-top:12px;">
-                Before proceeding,
-                we need to confirm your identity.
-            </p>
-
-            <h2 style="margin-top:30px;">
-                Who is the world's most beautiful wife? 👑
-            </h2>
-
-            <div
-                class="options"
-                id="verifyOptions">
-            </div>
-
-            <div
-                id="verifyMessage"
-                style="
-                    margin-top:20px;
-                    min-height:40px;
-                    font-weight:900;
-                ">
-            </div>
-
-        </div>
-
+    <div style="font-size:65px;">
+        🔐
     </div>
+
+    <h1>
+        Birthday Verification
+    </h1>
+
+    <p>
+        Before proceeding,
+        we need to confirm your identity.
+    </p>
+
+    <h2 style="margin-top:30px;">
+        Who is the world's most beautiful wife? 👑
+    </h2>
+
+    <div
+    class="options"
+    id="verifyOptions">
+    </div>
+
+    <div
+    id="verifyMessage"
+    style="
+        margin-top:20px;
+        min-height:40px;
+        font-weight:900;
+    ">
+    </div>
+
+</div>
+
+</div>
 
 </section>
 
@@ -1588,53 +1506,53 @@ body{
 ===================================================== -->
 
 <section
-    class="screen"
-    id="screen3">
+class="screen"
+id="screen3">
 
-    <div class="content">
+<div class="content">
 
-        <div class="card">
+<div class="card">
 
-            <h1>
-                How Well Do You Know Your Wife? 👀
-            </h1>
+    <h1>
+        How Well Do You Know Your Wife? 👀
+    </h1>
 
-            <p>
-                Let's see how much attention
-                you've been paying. 😌
-            </p>
+    <p>
+        Let's see how much attention
+        you've been paying. 😌
+    </p>
 
-            <div class="progress">
+    <div class="progress">
 
-                <div
-                    class="progress-bar"
-                    id="quizProgress">
-                </div>
-
-            </div>
-
-            <h2
-                id="quizQuestion"
-                style="margin-top:20px;">
-            </h2>
-
-            <div
-                class="options"
-                id="quizOptions">
-            </div>
-
-            <div
-                id="quizResult"
-                style="
-                    margin-top:20px;
-                    white-space:pre-line;
-                    font-weight:900;
-                ">
-            </div>
-
+        <div
+        class="progress-bar"
+        id="quizProgress">
         </div>
 
     </div>
+
+    <h2
+    id="quizQuestion"
+    style="margin-top:20px;">
+    </h2>
+
+    <div
+    class="options"
+    id="quizOptions">
+    </div>
+
+    <div
+    id="quizResult"
+    style="
+        margin-top:20px;
+        white-space:pre-line;
+        font-weight:900;
+    ">
+    </div>
+
+</div>
+
+</div>
 
 </section>
 
@@ -1644,118 +1562,125 @@ body{
 ===================================================== -->
 
 <section
-    class="screen"
-    id="screen4">
+class="screen"
+id="screen4">
 
-    <div class="content">
+<div class="content">
 
-        <div class="card">
+<div class="card">
 
-            <h1>
-                Our Relationship:
-                <br>
-                A Scientific Analysis 🧪😂
-            </h1>
+    <h1>
+        Our Relationship:
+        <br>
+        A Scientific Analysis 🧪😂
+    </h1>
 
-            <div class="roast-grid">
+    <div class="roast-grid">
 
-                <div class="roast">
+        <div class="roast">
 
-                    ❤️ Love
+            ❤️ Love
 
-                    <div class="bar">
-                        <div
-                            class="bar-fill"
-                            data-width="100%">
-                        </div>
-                    </div>
+            <div class="bar">
 
-                    <b>100%</b>
-
-                </div>
-
-
-                <div class="roast">
-
-                    😂 Arguments
-
-                    <div class="bar">
-                        <div
-                            class="bar-fill"
-                            data-width="82%">
-                        </div>
-                    </div>
-
-                    <b>82%</b>
-
-                </div>
-
-
-                <div class="roast">
-
-                    👑 Who is right?
-
-                    <div class="bar">
-                        <div
-                            class="bar-fill"
-                            data-width="100%">
-                        </div>
-                    </div>
-
-                    <b>Wife — 100%</b>
-
-                </div>
-
-
-                <div class="roast">
-
-                    🧍 Husband survival
-
-                    <div class="bar">
-                        <div
-                            class="bar-fill"
-                            data-width="87%">
-                        </div>
-                    </div>
-
-                    <b>87%</b>
-
+                <div
+                class="bar-fill"
+                data-width="100%">
                 </div>
 
             </div>
 
-            <p style="
-                font-size:18px;
-                line-height:1.7;
-            ">
+            <b>100%</b>
 
-                Chance of escaping this marriage:
+        </div>
 
-                <b>0.000001%</b> 😌
 
-                <br><br>
+        <div class="roast">
 
-                Scientific conclusion:
+            😂 Arguments
 
-                <br>
+            <div class="bar">
 
-                <b>
-                    You are officially stuck with your wife. ❤️😂
-                </b>
+                <div
+                class="bar-fill"
+                data-width="82%">
+                </div>
 
-            </p>
+            </div>
 
-            <button
-                class="main-btn"
-                onclick="goToScreen(5)">
+            <b>82%</b>
 
-                Continue the Investigation 🔬
+        </div>
 
-            </button>
+
+        <div class="roast">
+
+            👑 Who is right?
+
+            <div class="bar">
+
+                <div
+                class="bar-fill"
+                data-width="100%">
+                </div>
+
+            </div>
+
+            <b>Wife — 100%</b>
+
+        </div>
+
+
+        <div class="roast">
+
+            🧍 Husband survival
+
+            <div class="bar">
+
+                <div
+                class="bar-fill"
+                data-width="87%">
+                </div>
+
+            </div>
+
+            <b>87%</b>
 
         </div>
 
     </div>
+
+
+    <p>
+
+        Chance of escaping this marriage:
+
+        <b>0.000001%</b> 😌
+
+        <br><br>
+
+        Scientific conclusion:
+
+        <br>
+
+        <b>
+            You are officially stuck with your wife. ❤️😂
+        </b>
+
+    </p>
+
+
+    <button
+    class="main-btn"
+    onclick="goToScreen(5)">
+
+        Continue the Investigation 🔬
+
+    </button>
+
+</div>
+
+</div>
 
 </section>
 
@@ -1765,56 +1690,58 @@ body{
 ===================================================== -->
 
 <section
-    class="screen"
-    id="screen5">
+class="screen"
+id="screen5">
 
-    <div class="content">
+<div class="content">
 
-        <div class="card">
+<div class="card">
 
-            <h1>
-                Reasons Why I Love You ❤️
-            </h1>
+    <h1>
+        Reasons Why I Love You ❤️
+    </h1>
 
-            <p>
-                Some things are impossible to explain...
-                but I'll try. 🥹
-            </p>
+    <p>
+        Some things are impossible to explain...
+        but I'll try. 🥹
+    </p>
 
-            <div class="love-grid">
 
-                <!-- EDIT THESE -->
+    <div class="love-grid">
 
-                <div class="love-card">
-                    ❤️ You make me laugh.
-                </div>
+        <!-- EDIT THESE -->
 
-                <div class="love-card">
-                    ❤️ You tolerate my drama.
-                </div>
+        <div class="love-card">
+            ❤️ You make me laugh.
+        </div>
 
-                <div class="love-card">
-                    ❤️ You make ordinary days feel special.
-                </div>
+        <div class="love-card">
+            ❤️ You tolerate my drama.
+        </div>
 
-                <div class="love-card">
-                    ❤️ You somehow still love me
-                    after seeing my worst moods.
-                </div>
+        <div class="love-card">
+            ❤️ You make ordinary days feel special.
+        </div>
 
-            </div>
-
-            <button
-                class="main-btn"
-                onclick="goToScreen(6)">
-
-                Okay... What's My Gift? 🎁
-
-            </button>
-
+        <div class="love-card">
+            ❤️ You somehow still love me
+            after seeing my worst moods.
         </div>
 
     </div>
+
+
+    <button
+    class="main-btn"
+    onclick="goToScreen(6)">
+
+        Okay... What's My Gift? 🎁
+
+    </button>
+
+</div>
+
+</div>
 
 </section>
 
@@ -1824,66 +1751,69 @@ body{
 ===================================================== -->
 
 <section
-    class="screen"
-    id="screen6">
+class="screen"
+id="screen6">
 
-    <div class="content">
+<div class="content">
 
-        <div class="card">
+<div class="card">
 
-            <h1>
-                Choose Your Birthday Gift 🎁
-            </h1>
+    <h1>
+        Choose Your Birthday Gift 🎁
+    </h1>
 
-            <p>
-                Choose wisely... 👀
-            </p>
+    <p>
+        Choose wisely... 👀
+    </p>
 
-            <div class="gift-grid">
 
-                <div
-                    class="gift"
-                    onclick="openGift(this,1)">
-                    🎁
-                </div>
+    <div class="gift-grid">
 
-                <div
-                    class="gift"
-                    onclick="openGift(this,2)">
-                    🎁
-                </div>
+        <div
+        class="gift"
+        onclick="openGift(this,1)">
+            🎁
+        </div>
 
-                <div
-                    class="gift"
-                    onclick="openGift(this,3)">
-                    🎁
-                </div>
+        <div
+        class="gift"
+        onclick="openGift(this,2)">
+            🎁
+        </div>
 
-            </div>
-
-            <div
-                id="giftMessage"
-                style="
-                    min-height:70px;
-                    font-size:18px;
-                    font-weight:900;
-                    line-height:1.6;
-                ">
-            </div>
-
-            <button
-                id="giftNext"
-                class="main-btn"
-                style="display:none;"
-                onclick="goToScreen(7)">
-
-                Let's See Our Memories 📸
-
-            </button>
-
+        <div
+        class="gift"
+        onclick="openGift(this,3)">
+            🎁
         </div>
 
     </div>
+
+
+    <div
+    id="giftMessage"
+    style="
+        min-height:70px;
+        font-size:18px;
+        font-weight:900;
+        line-height:1.6;
+    ">
+    </div>
+
+
+    <button
+    id="giftNext"
+    class="main-btn"
+    style="display:none;"
+    onclick="goToScreen(7)">
+
+        Let's See Our Memories 📸
+
+    </button>
+
+</div>
+
+</div>
 
 </section>
 
@@ -1893,128 +1823,130 @@ body{
 ===================================================== -->
 
 <section
-    class="screen"
-    id="screen7">
+class="screen"
+id="screen7">
 
-    <div class="content">
+<div class="content">
 
-        <div class="card">
+<div class="card">
 
-            <h1>
-                Our Memories 📸❤️
-            </h1>
+    <h1>
+        Our Memories 📸❤️
+    </h1>
+
+    <p>
+        A tiny collection of
+        some of my favorite moments with you.
+    </p>
+
+
+    <div class="memory-grid">
+
+        <!-- CHANGE YOUR PHOTOS -->
+
+        <div
+        class="memory"
+        style="--rotation:-4deg">
+
+            <img
+            src="images/photo1.jpeg"
+            alt="Memory">
 
             <p>
-                A tiny collection of
-                some of my favorite moments with you.
+                The beginning of our chaos. ❤️
             </p>
 
-            <div class="memory-grid">
-
-                <!-- CHANGE YOUR PHOTOS -->
-
-                <div
-                    class="memory"
-                    style="--rotation:-4deg">
-
-                    <img
-                        src="images/photo1.jpeg"
-                        alt="Memory">
-
-                    <p>
-                        The beginning of our chaos. ❤️
-                    </p>
-
-                </div>
+        </div>
 
 
-                <div
-                    class="memory"
-                    style="--rotation:3deg">
+        <div
+        class="memory"
+        style="--rotation:3deg">
 
-                    <img
-                        src="images/photo2.jpeg"
-                        alt="Memory">
+            <img
+            src="images/photo2.jpeg"
+            alt="Memory">
 
-                    <p>
-                        One of my favorite memories. 🥹
-                    </p>
+            <p>
+                One of my favorite memories. 🥹
+            </p>
 
-                </div>
-
-
-                <div
-                    class="memory"
-                    style="--rotation:-2deg">
-
-                    <img
-                        src="images/photo3.jpeg"
-                        alt="Memory">
-
-                    <p>
-                        Us being us. 😂❤️
-                    </p>
-
-                </div>
+        </div>
 
 
-                <div
-                    class="memory"
-                    style="--rotation:4deg">
+        <div
+        class="memory"
+        style="--rotation:-2deg">
 
-                    <img
-                        src="images/photo4.jpeg"
-                        alt="Memory">
+            <img
+            src="images/photo3.jpeg"
+            alt="Memory">
 
-                    <p>
-                        Another beautiful memory. 💕
-                    </p>
+            <p>
+                Us being us. 😂❤️
+            </p>
 
-                </div>
-
-
-                <div
-                    class="memory"
-                    style="--rotation:-3deg">
-
-                    <img
-                        src="images/photo5.jpeg"
-                        alt="Memory">
-
-                    <p>
-                        A moment we'll always remember. ✨
-                    </p>
-
-                </div>
+        </div>
 
 
-                <div
-                    class="memory"
-                    style="--rotation:2deg">
+        <div
+        class="memory"
+        style="--rotation:4deg">
 
-                    <img
-                        src="images/photo6.jpeg"
-                        alt="Memory">
+            <img
+            src="images/photo4.jpeg"
+            alt="Memory">
 
-                    <p>
-                        And somehow... here we are. ❤️
-                    </p>
+            <p>
+                Another beautiful memory. 💕
+            </p>
 
-                </div>
+        </div>
 
-            </div>
 
-            <button
-                class="main-btn"
-                onclick="goToScreen(8)">
+        <div
+        class="memory"
+        style="--rotation:-3deg">
 
-                One Last Thing... 🎂
+            <img
+            src="images/photo5.jpeg"
+            alt="Memory">
 
-            </button>
+            <p>
+                A moment we'll always remember. ✨
+            </p>
+
+        </div>
+
+
+        <div
+        class="memory"
+        style="--rotation:2deg">
+
+            <img
+            src="images/photo6.jpeg"
+            alt="Memory">
+
+            <p>
+                And somehow... here we are. ❤️
+            </p>
 
         </div>
 
     </div>
+
+
+    <button
+    class="main-btn"
+    onclick="goToScreen(8)">
+
+        One Last Thing... 🎂
+
+    </button>
+
+</div>
+
+</div>
 
 </section>
 
@@ -2024,77 +1956,90 @@ body{
 ===================================================== -->
 
 <section
-    class="screen"
-    id="screen8">
+class="screen"
+id="screen8">
 
-    <div class="content">
+<div class="content">
 
-        <div class="card">
+<div class="card">
 
-            <h1>
-                Make a Wish 🎂✨
-            </h1>
+    <h1>
+        Make a Wish 🎂✨
+    </h1>
 
-            <p>
-                Your birthday cake is waiting...
-            </p>
+    <p>
+        Your birthday cake is waiting...
+    </p>
 
-            <div class="cake">
 
-                <div
-                    class="candle"
-                    id="candle1">
-                    <div class="flame"></div>
-                </div>
+    <div class="cake">
 
-                <div
-                    class="candle"
-                    id="candle2">
-                    <div class="flame"></div>
-                </div>
+        <div
+        class="candle"
+        id="candle1">
 
-                <div
-                    class="candle"
-                    id="candle3">
-                    <div class="flame"></div>
-                </div>
-
-                <div class="cake-top"></div>
-
-                <div class="cake-body"></div>
-
-            </div>
-
-            <button
-                class="main-btn"
-                onclick="blowCandles()">
-
-                Make a Wish 🎂
-
-            </button>
-
-            <p
-                id="cakeMessage"
-                style="
-                    min-height:45px;
-                    margin-top:15px;
-                    font-weight:900;
-                ">
-            </p>
-
-            <button
-                id="cakeNext"
-                class="main-btn"
-                style="display:none;"
-                onclick="goToScreen(9)">
-
-                Open My Letter 💌
-
-            </button>
+            <div class="flame"></div>
 
         </div>
 
+
+        <div
+        class="candle"
+        id="candle2">
+
+            <div class="flame"></div>
+
+        </div>
+
+
+        <div
+        class="candle"
+        id="candle3">
+
+            <div class="flame"></div>
+
+        </div>
+
+
+        <div class="cake-top"></div>
+
+        <div class="cake-body"></div>
+
     </div>
+
+
+    <button
+    class="main-btn"
+    onclick="blowCandles()">
+
+        Make a Wish 🎂
+
+    </button>
+
+
+    <p
+    id="cakeMessage"
+    style="
+        min-height:45px;
+        margin-top:15px;
+        font-weight:900;
+    ">
+    </p>
+
+
+    <button
+    id="cakeNext"
+    class="main-btn"
+    style="display:none;"
+    onclick="goToScreen(9)">
+
+        Open My Letter 💌
+
+    </button>
+
+</div>
+
+</div>
 
 </section>
 
@@ -2104,391 +2049,362 @@ body{
 ===================================================== -->
 
 <section
-    class="screen"
-    id="screen9">
+class="screen"
+id="screen9">
 
-    <div class="content">
+<div class="content">
 
-        <div class="card">
+<div class="card">
 
-            <h2>
-                Okay...
-                <br>
-                Enough bullying. 😌❤️
-            </h2>
+    <h2>
+        Okay...
+        <br>
+        Enough bullying. 😌❤️
+    </h2>
 
-            <div
-                class="letter"
-                style="margin-top:25px;">
 
-                <p id="letterText"></p>
+    <div
+    class="letter"
+    style="margin-top:25px;">
 
-            </div>
-
-            <div
-                class="final-love"
-                style="margin-top:30px;">
-
-                Happy Birthday,
-                My Love. ❤️
-
-            </div>
-
-            <button
-                class="main-btn"
-                onclick="showSecret()">
-
-                There's One More Surprise... 🎁
-
-            </button>
-
-            <div
-                id="secret"
-                style="
-                    display:none;
-                    margin-top:25px;
-                ">
-
-                <!-- CHANGE THIS PHOTO -->
-
-                <img
-                    src="images/special.jpeg"
-                    class="final-photo"
-                    alt="Special Memory">
-
-                <h2 style="margin-top:25px;">
-
-                    You are my favorite person. ❤️
-
-                </h2>
-
-                <p style="
-                    margin-top:12px;
-                    line-height:1.7;
-                    font-size:18px;
-                ">
-
-                    And yes...
-
-                    <br>
-
-                    you're still stuck with me. 😂💕
-
-                </p>
-
-                <button
-                    class="main-btn"
-                    onclick="finalCelebration()">
-
-                    One Last Celebration! 🎆
-
-                </button>
-
-            </div>
-
-        </div>
+        <p id="letterText"></p>
 
     </div>
 
+
+    <div
+    class="final-love"
+    style="margin-top:30px;">
+
+        Happy Birthday,
+        My Love. ❤️
+
+    </div>
+
+
+    <button
+    class="main-btn"
+    onclick="showSecret()">
+
+        There's One More Surprise... 🎁
+
+    </button>
+
+
+    <div
+    id="secret"
+    style="
+        display:none;
+        margin-top:25px;
+    ">
+
+        <!-- CHANGE THIS PHOTO -->
+
+        <img
+        src="images/special.jpeg"
+        class="final-photo"
+        alt="Special Memory">
+
+
+        <h2 style="margin-top:25px;">
+
+            You are my favorite person. ❤️
+
+        </h2>
+
+
+        <p style="
+            margin-top:12px;
+            line-height:1.7;
+            font-size:18px;
+        ">
+
+            And yes...
+
+            <br>
+
+            you're still stuck with me. 😂💕
+
+        </p>
+
+
+        <button
+        class="main-btn"
+        onclick="finalCelebration()">
+
+            One Last Celebration! 🎆
+
+        </button>
+
+    </div>
+
+</div>
+
+</div>
+
 </section>
+
 
 
 <script>
 
 /* =====================================================
-   SCREEN NAVIGATION
+   NAVIGATION
 ===================================================== */
 
 function goToScreen(number){
 
-    const current =
-        document.querySelector(
-            ".screen.active"
-        );
+    document
+    .querySelectorAll(".screen")
+    .forEach(screen=>{
+        screen.classList.remove("active");
+    });
 
-    const next =
-        document.getElementById(
-            "screen" + number
-        );
-
-    if(!next) return;
-
-    current.classList.remove("active");
-
-    setTimeout(()=>{
-
-        next.classList.add("active");
-
-        createConfetti(30);
-
-        createSparkles(15);
-
-    },80);
-
-
-    if(number === 4){
-
-        setTimeout(
-            animateBars,
-            500
-        );
-
-    }
-
-
-    if(number === 9){
-
-        setTimeout(
-            startLetter,
-            500
-        );
-
-    }
-
-}
-
-
-/* =====================================================
-   CONFETTI
-===================================================== */
-
-function createConfetti(amount=50){
-
-    const pieces=[
-
-        "🎉",
-        "🎊",
-        "💗",
-        "❤️",
-        "✨",
-        "⭐",
-        "💕",
-        "🌸",
-        "🎂",
-        "💫"
-
-    ];
-
-    for(
-        let i=0;
-        i<amount;
-        i++
-    ){
-
-        const item =
-            document.createElement(
-                "div"
-            );
-
-        item.className="confetti";
-
-        item.innerText =
-            pieces[
-                Math.floor(
-                    Math.random() *
-                    pieces.length
-                )
-            ];
-
-        item.style.left =
-            Math.random()*100+"vw";
-
-        item.style.fontSize =
-            (12+Math.random()*22)+"px";
-
-        item.style.animationDuration =
-            (2+Math.random()*3)+"s";
-
-        document.body.appendChild(item);
-
-        setTimeout(()=>{
-
-            item.remove();
-
-        },5500);
-
-    }
-
-}
-
-
-/* =====================================================
-   FLOATING HEARTS
-===================================================== */
-
-setInterval(()=>{
-
-    const heart =
-        document.createElement(
-            "div"
-        );
-
-    heart.className="heart";
-
-    const hearts=[
-
-        "❤️",
-        "💗",
-        "💕",
-        "💖",
-        "💘"
-
-    ];
-
-    heart.innerText =
-        hearts[
-            Math.floor(
-                Math.random()*hearts.length
-            )
-        ];
-
-    heart.style.left =
-        Math.random()*100+"vw";
-
-    heart.style.fontSize =
-        (16+Math.random()*20)+"px";
-
-    heart.style.animationDuration =
-        (4+Math.random()*4)+"s";
-
-    document.body.appendChild(
-        heart
+    const target =
+    document.getElementById(
+        "screen"+number
     );
 
-    setTimeout(()=>{
+    if(target){
 
-        heart.remove();
+        target.classList.add("active");
 
-    },8000);
+        window.scrollTo({
+            top:0,
+            behavior:"smooth"
+        });
 
-},1300);
+    }
 
 
-/* =====================================================
-   SPARKLES
-===================================================== */
-
-function createSparkles(amount=10){
-
-    const symbols=[
-
-        "✨",
-        "⭐",
-        "💫",
-        "🌟"
-
-    ];
-
-    for(
-        let i=0;
-        i<amount;
-        i++
-    ){
+    if(number===4){
 
         setTimeout(()=>{
+            animateBars();
+        },300);
 
-            const sparkle =
-                document.createElement(
-                    "div"
-                );
+    }
 
-            sparkle.className="sparkle";
 
-            sparkle.innerText =
-                symbols[
-                    Math.floor(
-                        Math.random()*
-                        symbols.length
-                    )
-                ];
+    if(number===9){
 
-            sparkle.style.left =
-                Math.random()*100+"vw";
-
-            sparkle.style.top =
-                Math.random()*100+"vh";
-
-            document.body.appendChild(
-                sparkle
-            );
-
-            setTimeout(()=>{
-
-                sparkle.remove();
-
-            },900);
-
-        },i*70);
+        typeLetter();
 
     }
 
 }
+
+
+/* =====================================================
+   BIRTHDAY COUNTDOWN
+===================================================== */
+
+/*
+   IMPORTANT:
+
+   Birthday = 12 August 2026
+
+   This uses the visitor's LOCAL TIME.
+
+   So:
+
+   Bangladesh visitor
+   → Bangladesh local time
+
+   Russia / Voronezh visitor
+   → Voronezh local time
+
+   No timezone is manually written here.
+*/
+
+const birthdayYear = 2026;
+
+const birthdayMonth = 7;
+// JavaScript months:
+// January = 0
+// August = 7
+
+const birthdayDay = 12;
+
+
+function updateCountdown(){
+
+    const now =
+    new Date();
+
+
+    /*
+       This creates midnight of
+       12 August in the visitor's
+       OWN local timezone.
+    */
+
+    const birthday =
+    new Date(
+        birthdayYear,
+        birthdayMonth,
+        birthdayDay,
+        0,
+        0,
+        0
+    );
+
+
+    let difference =
+    birthday.getTime()
+    -
+    now.getTime();
+
+
+    /*
+       If birthday has started,
+       show birthday message.
+    */
+
+    if(difference <= 0){
+
+        document
+        .getElementById("countdown")
+        .classList.add("hidden");
+
+        document
+        .getElementById("birthdayNow")
+        .classList.remove("hidden");
+
+        return;
+    }
+
+
+    const days =
+    Math.floor(
+        difference /
+        (1000*60*60*24)
+    );
+
+
+    const hours =
+    Math.floor(
+        (difference /
+        (1000*60*60)) % 24
+    );
+
+
+    const minutes =
+    Math.floor(
+        (difference /
+        (1000*60)) % 60
+    );
+
+
+    const seconds =
+    Math.floor(
+        (difference /
+        1000) % 60
+    );
+
+
+    document
+    .getElementById("days")
+    .innerText =
+    String(days).padStart(2,"0");
+
+
+    document
+    .getElementById("hours")
+    .innerText =
+    String(hours).padStart(2,"0");
+
+
+    document
+    .getElementById("minutes")
+    .innerText =
+    String(minutes).padStart(2,"0");
+
+
+    document
+    .getElementById("seconds")
+    .innerText =
+    String(seconds).padStart(2,"0");
+}
+
+
+updateCountdown();
+
+setInterval(
+    updateCountdown,
+    1000
+);
 
 
 /* =====================================================
    VERIFICATION
 ===================================================== */
 
-const verifyAnswers=[
-
-    "Your Wife ❤️",
-
-    "Obviously your Wife ❤️",
-
-    "Why are there other options?"
-
+const verifyOptions = [
+    "The one who says “I'm not mad” while clearly being mad 😌",
+    "The one who somehow always wins every argument 😂",
+    "The Queen of your heart 👑",
+    "All of the above 😂"
 ];
 
 
 const verifyContainer =
-    document.getElementById(
-        "verifyOptions"
-    );
+document.getElementById(
+    "verifyOptions"
+);
 
 
-verifyAnswers.forEach(
-    (answer,index)=>{
+verifyOptions.forEach(
+    (option,index)=>{
 
         const button =
-            document.createElement(
-                "button"
-            );
+        document.createElement("div");
 
         button.className="option";
 
-        button.innerText=answer;
+        button.innerText=option;
 
         button.onclick=()=>{
 
-            
-                document.getElementById(
-                    "verifyMessage"
-                ).innerText =
-                    "✅ Identity confirmed. You may continue. ❤️";
+            if(index===3){
 
-               
-            
+                button.classList.add("correct");
 
-                document.getElementById(
-                    "verifyMessage"
-                ).innerText =
-                    "✅ Identity confirmed. You may continue. ❤️";
+                document
+                .getElementById("verifyMessage")
+                .innerText =
+                "Correct! 🎉 You may proceed, Mr. Husband. 😂❤️";
 
-                createConfetti(80);
+                setTimeout(
+                    ()=>{
+                        goToScreen(3);
+                    },
+                    1200
+                );
 
-                setTimeout(()=>{
+            }
 
-                    goToScreen(3);
+            else{
 
-                },1300);
+                button.classList.add("wrong");
 
-            
+                document
+                .getElementById("verifyMessage")
+                .innerText =
+                "❌ Wrong answer. Try again, husband. 😌😂";
+
+                setTimeout(
+                    ()=>{
+                        button.classList.remove("wrong");
+                    },
+                    700
+                );
+
+            }
 
         };
 
-        verifyContainer.appendChild(
-            button
-        );
+        verifyContainer.appendChild(button);
 
     }
 );
@@ -2498,193 +2414,226 @@ verifyAnswers.forEach(
    QUIZ
 ===================================================== */
 
-const questions=[
+/*
+   EDIT YOUR QUESTIONS HERE
+*/
+const quizQuestions = [
 
     {
-
         question:
-        "What does she mean when she says 'I'm fine'?",
+        "Who is always right in this relationship? 👑",
 
         options:[
-
-            "She is actually fine",
-
-            "Something is definitely wrong",
-
-            "She wants pizza",
-
-            "She wants to sleep"
-
-        ],
-
-        correct:1
-
-    },
-
-
-    {
-
-        question:
-        "Who is always right?",
-
-        options:[
-
-            "Husband",
-
-            "Wife",
-
-            "Google",
-
+            "Husband 😎",
+            "Wife ❤️",
+            "Google 😂",
             "Nobody"
-
         ],
 
-        correct:1
+        answer:1,
 
+        warnings:[
+            "😎 That confidence is adorable... but you're about to learn an important lesson. 😂",
+            "",
+            "😂 You really tried to bring Google into our marriage?",
+            "Nobody?! Interesting theory, husband. Very interesting. 👀😂"
+        ]
     },
 
 
     {
-
         question:
-        "What happens when she says 'do whatever you want'?",
+        "What should husband do when wife says 'I'm fine'? 👀",
 
         options:[
-
-            "You can do whatever you want",
-
-            "Nothing",
-
-            "Reconsider your life choices",
-
-            "You get a reward"
-
+            "Believe her",
+            "Run away",
+            "Investigate carefully 😂",
+            "Go to sleep"
         ],
 
-        correct:2
+        answer:2,
 
+        warnings:[
+            "😂 Believe her immediately? Bold move, husband.",
+            "RUN AWAY?! 🚨 Your survival strategy needs improvement. 😂",
+            "",
+            "Go to sleep?! Sir, this is how problems begin. 😭😂"
+        ]
     },
 
 
     {
-
         question:
-        "What is her favorite activity?",
+        "What is the most important thing in marriage? ❤️",
 
         options:[
-
-            "Sleeping",
-
-            "Eating",
-
-            "Talking to you",
-
+            "Love",
+            "Communication",
+            "Food 😂",
             "All of the above"
-
         ],
 
-        correct:3
+        answer:3,
 
+        warnings:[
+            "❤️ Love is important... but apparently you're not getting full marks today. 😂",
+            "Communication is important, but I'm not accepting that as the final answer. 😌",
+            "😂 FOOD?! At least you're honest, husband.",
+            ""
+        ]
     }
 
 ];
 
 
-let questionIndex=0;
+let currentQuestion = 0;
 
-let score=0;
+let quizScore = 0;
 
+
+/* =========================================
+   LOAD QUESTION
+========================================= */
 
 function loadQuestion(){
 
-    const q =
-        questions[questionIndex];
+    const question =
+    quizQuestions[currentQuestion];
 
-    document.getElementById(
-        "quizQuestion"
-    ).innerText=
-        q.question;
 
-    document.getElementById(
-        "quizProgress"
-    ).style.width =
-        (
-            questionIndex /
-            questions.length *
-            100
-        )+"%";
+    document
+    .getElementById("quizQuestion")
+    .innerText =
+    question.question;
 
 
     const container =
-        document.getElementById(
-            "quizOptions"
-        );
+    document.getElementById(
+        "quizOptions"
+    );
+
 
     container.innerHTML="";
 
 
-    q.options.forEach(
+    document
+    .getElementById("quizResult")
+    .innerText="";
+
+
+    question.options.forEach(
         (option,index)=>{
 
             const button =
-                document.createElement(
-                    "button"
-                );
+            document.createElement("div");
+
 
             button.className="option";
 
-            button.innerText=option;
+
+            button.innerText=
+            option;
+
 
             button.onclick=()=>{
 
-                if(index===q.correct){
+                /* =========================
+                   CORRECT ANSWER
+                ========================= */
 
-                    score++;
+                if(
+                    index ===
+                    question.answer
+                ){
 
-                    button.style.background=
-                        "#ffd6e8";
+                    button.classList.add(
+                        "correct"
+                    );
 
-                    button.innerText=
-                        "✅ Correct!";
 
-                    createConfetti(20);
+                    quizScore++;
+
+
+                    document
+                    .getElementById(
+                        "quizResult"
+                    )
+                    .innerText =
+                    getCorrectMessage();
+
+
+                    /*
+                       Correct হলে
+                       তবেই next question যাবে
+                    */
+
+                    setTimeout(
+                        ()=>{
+
+                            currentQuestion++;
+
+
+                            if(
+                                currentQuestion <
+                                quizQuestions.length
+                            ){
+
+                                loadQuestion();
+
+                            }
+
+                            else{
+
+                                showQuizResult();
+
+                            }
+
+                        },
+                        1000
+                    );
 
                 }
+
+
+                /* =========================
+                   WRONG ANSWER
+                ========================= */
 
                 else{
 
-                    button.style.background=
-                        "#ffe0eb";
+                    button.classList.add(
+                        "wrong"
+                    );
 
-                    button.innerText=
-                        "❌ Nope!";
+
+
+                    document
+                    .getElementById(
+                        "quizResult"
+                    )
+                    .innerText =
+                    "❌ " +
+                    question.warnings[index];
+
+
+                    
+
+                    setTimeout(
+                        ()=>{
+
+                            button.classList.remove(
+                                "wrong"
+                            );
+
+                        },
+                        600
+                    );
 
                 }
 
-
-                setTimeout(()=>{
-
-                    questionIndex++;
-
-
-                    if(
-                        questionIndex >=
-                        questions.length
-                    ){
-
-                        finishQuiz();
-
-                    }
-
-                    else{
-
-                        loadQuestion();
-
-                    }
-
-                },650);
-
             };
+
 
             container.appendChild(
                 button
@@ -2693,91 +2642,128 @@ function loadQuestion(){
         }
     );
 
+
+    /*
+       Progress bar
+    */
+
+    const progress =
+    (
+        currentQuestion /
+        quizQuestions.length
+    ) * 100;
+
+
+    document
+    .getElementById("quizProgress")
+    .style.width =
+    progress + "%";
+
 }
 
 
-function finishQuiz(){
+/* =========================================
+   CORRECT ANSWER MESSAGE
+========================================= */
 
-    document.getElementById(
-        "quizProgress"
-    ).style.width="100%";
+function getCorrectMessage(){
 
+    const messages = [
 
-    let result;
+        "✅ Finally! Someone is paying attention. 😂❤️",
 
+        "✅ Correct! Husband knowledge level: impressive. 😌❤️",
 
-    const percent =
-        score/
-        questions.length*
-        100;
+        "✅ Well done, birthday boy! You may proceed. 👑",
 
+        "✅ That's my husband! 🥹❤️",
 
-    if(percent<=30){
+        "✅ Correct! Your husband privileges remain intact. 😂",
 
-        result=
-            "Wow. So you basically married a stranger. 😭";
+        "✅ Look at you actually knowing your wife. 😌❤️"
 
-    }
-
-    else if(percent<=70){
-
-        result=
-            "Not terrible. Training will continue. 😌";
-
-    }
-
-    else if(percent<100){
-
-        result=
-            "Okayyy... you actually pay attention. 👀❤️";
-
-    }
-
-    else{
-
-        result=
-            "Suspicious. Are you cheating with an AI? 🤨😂";
-
-    }
+    ];
 
 
-    document.getElementById(
-        "quizQuestion"
-    ).innerText=
-        "Quiz Complete! 🎉";
+    return messages[
+        Math.floor(
+            Math.random() *
+            messages.length
+        )
+    ];
+
+}
 
 
-    document.getElementById(
-        "quizOptions"
-    ).innerHTML="";
+/* =========================================
+   FINAL QUIZ RESULT
+========================================= */
+
+function showQuizResult(){
+
+    document
+    .getElementById("quizProgress")
+    .style.width="100%";
 
 
-    document.getElementById(
-        "quizResult"
-    ).innerText=
-        "Score: "+
-        score+
-        "/"+
-        questions.length+
-        "\n\n"+
-        result;
+    document
+    .getElementById("quizQuestion")
+    .innerText =
+    "Quiz Complete! 🎉❤️";
 
 
-    createConfetti(80);
+    document
+    .getElementById("quizOptions")
+    .innerHTML="";
 
 
-    setTimeout(()=>{
+
+    const message =
+
+    "🏆 PERFECT SCORE! 🏆❤️\n\n" +
+
+    "Okay husband... you actually know your wife. 😂❤️\n\n" +
+
+    "Your husband privileges are officially safe. 😌👑\n\n" +
+
+    "Scientific conclusion:\n" +
+
+    "You are doing pretty well. Keep her happy. ❤️";
+
+
+    document
+    .getElementById("quizResult")
+    .innerText =
+    message;
+
+
+    const next =
+    document.createElement("button");
+
+
+    next.className =
+    "main-btn";
+
+
+    next.innerText =
+    "See Our Scientific Analysis 🧪😂";
+
+
+    next.onclick=()=>{
 
         goToScreen(4);
 
-    },3000);
+    };
+
+
+    document
+    .getElementById("quizResult")
+    .appendChild(next);
 
 }
 
 
 loadQuestion();
-
-
 /* =====================================================
    ROAST BARS
 ===================================================== */
@@ -2785,15 +2771,13 @@ loadQuestion();
 function animateBars(){
 
     document
-        .querySelectorAll(
-            ".bar-fill"
-        )
-        .forEach(bar=>{
+    .querySelectorAll(".bar-fill")
+    .forEach(bar=>{
 
-            bar.style.width=
-                bar.dataset.width;
+        bar.style.width =
+        bar.dataset.width;
 
-        });
+    });
 
 }
 
@@ -2802,93 +2786,110 @@ function animateBars(){
    GIFTS
 ===================================================== */
 
-function openGift(element,number){
+let giftsOpened = 0;
+
+
+const giftMessages = [
+
+    "🎁 Gift #1: Unlimited hugs from your wife. Terms & conditions apply. 😂❤️",
+
+    "🎁 Gift #2: One lifetime subscription to your wife's love. No cancellation allowed. 💕",
+
+    "🎁 Gift #3: You get to keep your wife forever. Honestly, this is the best one. 👑❤️"
+
+];
+
+
+function openGift(
+    element,
+    number
+){
 
     if(
-        element.classList.contains("open")
-    ) return;
+        element.classList.contains(
+            "opened"
+        )
+    ){
 
-
-    element.classList.add("open");
-
-
-    const message =
-        document.getElementById(
-            "giftMessage"
-        );
-
-
-    if(number===1){
-
-        message.innerText=
-            "🎉 Congratulations! You won... absolutely nothing. 😌";
-
-    }
-
-    else if(number===2){
-
-        message.innerText=
-            "🎁 Nice try! Your actual gift is waiting in real life. ❤️";
-
-    }
-
-    else{
-
-        message.innerText=
-            "🤗 You unlocked ONE FREE HUG from your wife!";
+        return;
 
     }
 
 
-    createConfetti(50);
+    element.classList.add(
+        "opened"
+    );
 
-    createSparkles(20);
+
+    element.textContent =
+    "💝";
 
 
-    document.getElementById(
-        "giftNext"
-    ).style.display=
-        "inline-flex";
+    document
+    .getElementById(
+        "giftMessage"
+    )
+    .textContent =
+    giftMessages[
+        number - 1
+    ];
+
+
+    giftsOpened++;
+
+
+    if(giftsOpened >= 3){
+
+        document
+        .getElementById(
+            "giftNext"
+        )
+        .style.display =
+        "inline-block";
+
+    }
 
 }
+
 
 
 /* =====================================================
    CAKE
 ===================================================== */
 
+let candlesBlown=false;
+
+
 function blowCandles(){
 
+    if(candlesBlown)
+        return;
+
+
+    candlesBlown=true;
+
+
     document
-        .querySelectorAll(
-            ".candle"
-        )
-        .forEach(candle=>{
+    .querySelectorAll(".flame")
+    .forEach(flame=>{
 
-            candle.classList.add("off");
+        flame.classList.add("off");
 
-        });
+    });
 
 
-    document.getElementById(
-        "cakeMessage"
-    ).innerText=
-        "✨ Wish made! May all your dreams come true. ❤️";
+    document
+    .getElementById("cakeMessage")
+    .innerText =
+    "🎉 Wish made! May this year bring you everything your heart wants... and me, obviously. ❤️😂";
 
 
-    createConfetti(130);
+    document
+    .getElementById("cakeNext")
+    .style.display="block";
 
-    createSparkles(40);
 
-
-    setTimeout(()=>{
-
-        document.getElementById(
-            "cakeNext"
-        ).style.display=
-            "inline-flex";
-
-    },1000);
+    createConfetti();
 
 }
 
@@ -2897,87 +2898,93 @@ function blowCandles(){
    LOVE LETTER
 ===================================================== */
 
-const finalMessage = `
+/*
+   EDIT YOUR LETTER HERE
+*/
 
-Happy Birthday, my love. ❤️
+const letter =
 
-I don't know if words will ever be enough
-to explain how much you mean to me.
+`Happy Birthday, my love. ❤️
 
-You make me laugh.
-You make me smile.
-And somehow, you make even ordinary
-days feel special.
+I hope this little website made you smile,
+because I made it just for you. 🥹💕
 
-Thank you for being there,
-for tolerating my drama,
-for making me feel loved,
-and for being my person.
+You are one of the most special people
+in my life, and I feel incredibly lucky
+to have you.
+
+Thank you for all the little things,
+the laughter, the memories,
+the silly arguments,
+and all the beautiful moments
+we share together.
+
+Life with you isn't always perfect. 
+Sometimes we argue, sometimes we annoy 
+each other, and obviously I am always right. 😌😂
+
+But through all of it, I wouldn't choose anyone else
+to share this crazy little life with.
+
+Thank you for loving me, tolerating my drama, 
+listening to me, making me laugh, 
+and simply being there.
+
+I hope this birthday reminds you 
+how deeply loved you are.
+
+No matter where life takes us, 
+I hope we keep making memories, 
+laughing at stupid things, 
+fighting over absolutely unnecessary things, 
+and choosing each other again and again.
+
+I love you more than I can properly put into words.
+No matter how far apart we are,
+you are always close to my heart. ❤️
 
 I hope this new year of your life
 brings you happiness, success,
-peace and everything your heart wishes for.
+peace and everything you wish for.
 
-No matter where life takes us,
-I hope we always find our way back to each other.
+And yes...
 
-I love you more than I can explain.
+You are officially stuck with me forever. 😂❤️
 
-Happy Birthday, my love. ❤️
-
-Now go enjoy your birthday...
-
-because unfortunately,
-you're still stuck with me. 😂❤️
-
-`;
+Happy Birthday, my love. 🎂💕`;
 
 
 let letterStarted=false;
 
 
-function startLetter(){
+function typeLetter(){
 
-    if(letterStarted) return;
+    if(letterStarted)
+        return;
 
 
     letterStarted=true;
 
 
-    const target =
-        document.getElementById(
-            "letterText"
-        );
+    const element =
+    document.getElementById(
+        "letterText"
+    );
 
 
-    let i=0;
+    let index=0;
 
 
     function type(){
 
-        if(i<finalMessage.length){
+        if(index < letter.length){
 
-            const char =
-                finalMessage.charAt(i);
+            element.innerHTML +=
+            letter[index]==="\n"
+            ? "<br>"
+            : letter[index];
 
-
-            if(char==="\n"){
-
-                target.innerHTML+=
-                    "<br>";
-
-            }
-
-            else{
-
-                target.innerHTML+=
-                    char;
-
-            }
-
-
-            i++;
-
+            index++;
 
             setTimeout(
                 type,
@@ -3001,17 +3008,21 @@ function startLetter(){
 function showSecret(){
 
     const secret =
-        document.getElementById(
-            "secret"
-        );
+    document.getElementById(
+        "secret"
+    );
 
 
     secret.style.display="block";
 
 
-    createConfetti(180);
+    secret.scrollIntoView({
+        behavior:"smooth",
+        block:"center"
+    });
 
-    createSparkles(60);
+
+    createConfetti();
 
 }
 
@@ -3022,219 +3033,122 @@ function showSecret(){
 
 function finalCelebration(){
 
-    createConfetti(300);
+    createConfetti();
 
-    createSparkles(100);
+    createConfetti();
 
-
-    for(
-        let i=0;
-        i<18;
-        i++
-    ){
-
-        setTimeout(()=>{
-
-            createFirework();
-
-        },i*250);
-
-    }
+    createConfetti();
 
 
-    for(
-        let i=0;
-        i<40;
-        i++
-    ){
-
-        setTimeout(()=>{
-
-            const heart =
-                document.createElement(
-                    "div"
-                );
-
-            heart.className="heart";
-
-            heart.innerText="❤️";
-
-            heart.style.left=
-                Math.random()*100+"vw";
-
-            heart.style.fontSize=
-                (20+Math.random()*30)+"px";
-
-            heart.style.animationDuration=
-                (3+Math.random()*3)+"s";
-
-            document.body.appendChild(
-                heart
-            );
+    const card =
+    document.querySelector(
+        "#screen9 .card"
+    );
 
 
-            setTimeout(()=>{
+    card.animate(
 
-                heart.remove();
+        [
+            {
+                transform:"scale(1)"
+            },
 
-            },6500);
+            {
+                transform:"scale(1.03)"
+            },
 
-        },i*80);
+            {
+                transform:"scale(1)"
+            }
 
-    }
+        ],
+
+        {
+            duration:600,
+            iterations:3
+        }
+
+    );
+
+
+    
 
 }
 
 
 /* =====================================================
-   FIREWORK
+   CONFETTI
 ===================================================== */
 
-function createFirework(){
+function createConfetti(){
 
-    const centerX =
-        10+
-        Math.random()*80;
-
-
-    const centerY =
-        10+
-        Math.random()*55;
-
-
-    const colors=[
-
-        "#ff207e",
-        "#d43cff",
-        "#ff75b8",
-        "#ffd43b",
-        "#ff7200",
-        "#ff4f9a"
-
+    const emojis=[
+        "❤️",
+        "💕",
+        "🎉",
+        "✨",
+        "🎂",
+        "💖",
+        "🎊",
+        "🌸"
     ];
 
 
     for(
         let i=0;
-        i<45;
+        i<80;
         i++
     ){
 
-        const particle =
-            document.createElement(
-                "div"
-            );
+        const confetti =
+        document.createElement("div");
+
+        confetti.className =
+        "confetti";
 
 
-        particle.className=
-            "firework";
+        confetti.innerText =
+        emojis[
+            Math.floor(
+                Math.random()
+                *
+                emojis.length
+            )
+        ];
 
 
-        particle.style.left=
-            centerX+"vw";
+        confetti.style.left =
+        Math.random()*100+"vw";
 
 
-        particle.style.top=
-            centerY+"vh";
+        confetti.style.fontSize =
+        (12+
+        Math.random()*20)+"px";
 
 
-        particle.style.background=
-            colors[
-                Math.floor(
-                    Math.random()*
-                    colors.length
-                )
-            ];
-
-
-        const angle =
-            Math.random()*
-            Math.PI*
-            2;
-
-
-        const distance =
-            50+
-            Math.random()*180;
-
-
-        particle.style.setProperty(
-            "--moveX",
-            Math.cos(angle)*
-            distance+
-            "px"
-        );
-
-
-        particle.style.setProperty(
-            "--moveY",
-            Math.sin(angle)*
-            distance+
-            "px"
-        );
+        confetti.style.animationDuration =
+        (2+
+        Math.random()*3)+"s";
 
 
         document.body.appendChild(
-            particle
+            confetti
         );
 
 
-        setTimeout(()=>{
-
-            particle.remove();
-
-        },1300);
+        setTimeout(
+            ()=>{
+                confetti.remove();
+            },
+            5000
+        );
 
     }
 
 }
 
-
-/* =====================================================
-   CLICK SPARKLE
-===================================================== */
-
-document.addEventListener(
-    "click",
-    e=>{
-
-        const sparkle =
-            document.createElement(
-                "div"
-            );
-
-
-        sparkle.className=
-            "sparkle";
-
-
-        sparkle.innerText=
-            "✨";
-
-
-        sparkle.style.left=
-            e.clientX+"px";
-
-
-        sparkle.style.top=
-            e.clientY+"px";
-
-
-        document.body.appendChild(
-            sparkle
-        );
-
-
-        setTimeout(()=>{
-
-            sparkle.remove();
-
-        },900);
-
-    }
-);
-
 </script>
 
 </body>
+
 </html>
