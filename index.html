@@ -1373,15 +1373,18 @@ body{
 @media(max-width:700px){
 
     .screen{
-    padding:25px 15px 60px 15px;
-    align-items:center;
-   }
+        padding:20px 12px 50px 12px;
+        align-items:center;
+    }
 
-.content{
-    max-height:88vh;
-    padding:5px 5px 35px 5px;
-   }
-   
+    .content{
+        width:100%;
+        max-width:900px;
+        max-height:86vh;
+        overflow-y:auto;
+        padding:5px 5px 35px 5px;
+    }
+
     .card{
         padding:24px 18px;
         border-radius:28px;
@@ -1410,8 +1413,7 @@ body{
     .main-btn{
         width:100%;
         max-width:340px;
-        margin:
-            8px auto;
+        margin:8px auto 16px auto;
     }
 
     .letter{
@@ -1420,11 +1422,8 @@ body{
     }
 
     .cake{
-        transform:
-            scale(.85);
-
-        margin:
-            10px auto;
+        transform:scale(.85);
+        margin:10px auto;
     }
 }
 
@@ -1435,6 +1434,15 @@ body{
 
 @media(max-width:380px){
 
+    .screen{
+        padding:15px 10px 45px 10px;
+    }
+
+    .content{
+        max-height:84vh;
+        padding-bottom:35px;
+    }
+
     .gift{
         width:95px;
         height:95px;
@@ -1443,12 +1451,11 @@ body{
     }
 
     .cake{
-        transform:
-            scale(.72);
-
+        transform:scale(.72);
         margin-top:-5px;
         margin-bottom:-15px;
     }
+
 }
 
 </style>
